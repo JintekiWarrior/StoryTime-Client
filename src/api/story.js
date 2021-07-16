@@ -26,10 +26,20 @@ export const indexStory = (user) => {
   })
 }
 
-export const showStory = (user, storyId) => {
+export const showStory = (storyId, user) => {
   return axios({
     url: apiUrl + '/stories/' + storyId,
     method: 'GET',
+    headers: {
+      'Authorization': `Token ${user.token}`
+    }
+  })
+}
+
+export const deleteStory = (storyId, user) => {
+  return axios({
+    url: apiUrl + '/stories/' + storyId,
+    method: 'DELETE',
     headers: {
       'Authorization': `Token ${user.token}`
     }

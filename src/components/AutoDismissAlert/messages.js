@@ -10,5 +10,7 @@ export default {
   createSuccess: 'You have created a story',
   createFailure: 'Oops a story couldn\'t be created.',
   indexSuccess: 'Here are your stories',
-  indexFailure: 'Oops something went wrong'
+  indexFailure: 'Oops something went wrong',
+  deleteSuccess: 'Successfully Destroyed',
+  deleteFailure: 'Destroy Failure'
 }

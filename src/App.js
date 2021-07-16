@@ -10,6 +10,7 @@ import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 import MainContent from './components/MainContent/MainContent'
+import ShowStory from './components/MainContent/ShowStory/ShowStory'
 
 class App extends Component {
   constructor (props) {
@@ -68,8 +69,11 @@ class App extends Component {
           )} />
 
           {/* App components */}
-          <AuthenticatedRoute user={user} path='/content' render={() => (
+          <AuthenticatedRoute user={user} exact path='/content' render={() => (
             <MainContent user={user} msgAlert={this.msgAlert} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/content/:id' render={() => (
+            <ShowStory user={user} msgAlert={this.msgAlert} />
           )} />
         </main>
       </Fragment>

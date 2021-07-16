@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { indexStory } from './../../../api/story.js'
 import messages from '../../AutoDismissAlert/messages'
 
@@ -33,7 +34,9 @@ const IndexStories = (props) => {
     <Fragment>
       <Button onClick={handleClick} variant='primary'>Show Stories</Button>
       {stories.map(story => (
-        <h3 key={story.id}>{story.title}</h3>
+        <h3 key={story.id}>
+          <Link to={`/content/${story.id}`}>{story.title}</Link>
+        </h3>
       ))}
     </Fragment>
   )
