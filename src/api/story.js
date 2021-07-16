@@ -8,13 +8,12 @@ export const createStory = (story, user) => {
     url: apiUrl + '/stories/',
     method: 'POST',
     headers: {
-      'Authorization': `Token token=${user.token}`
+      'Authorization': `Token ${user.token}`
     },
     data: {
       story: {
         title: story
-      },
-      owner: user.id
+      }
     }
   })
 }
@@ -24,7 +23,7 @@ export const indexStory = (user) => {
     url: apiUrl + '/stories/',
     method: 'GET',
     headers: {
-      'Authorization': `Token token=${user.token}`
+      'Authorization': `Token ${user.token}`
     }
   })
 }
