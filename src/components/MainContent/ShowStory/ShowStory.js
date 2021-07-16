@@ -11,6 +11,8 @@ const ShowStory = (props) => {
   const [story, setStory] = useState(null)
   // check if the story is deleted
   const [destroy, setDestroy] = useState(false)
+  // state to check if the edit button was clicked
+  const [edit, setEdit] = useState(false)
   // use use effect to capture the mounting of the story component and make an
   // axios call to show that one story.
   const { id } = props.match.params
@@ -21,6 +23,11 @@ const ShowStory = (props) => {
         setStory(res.data.story.title)
       })
   }, [])
+
+  // button to go to the story update page
+  const storyUpdate = () => {
+    setEdit(true)
+  }
 
   // handleclick function to delete a story when button is pressed
   const storyDestroy = () => {
@@ -45,11 +52,16 @@ const ShowStory = (props) => {
   if (destroy) {
     return <Redirect to={'/content'}/>
   }
+
+  if (edit) {
+    return <Redirect to={`/content/${id}/edit`}/>
+  }
   // render the story to the webpage
   return (
     <Fragment>
       <h2>{story}</h2>
       <Button onClick={storyDestroy}>Destroy</Button>
+      <Button onClick={storyUpdate}>Edit</Button>
     </Fragment>
   )
 }

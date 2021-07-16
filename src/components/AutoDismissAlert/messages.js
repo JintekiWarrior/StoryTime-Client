@@ -12,5 +12,7 @@ export default {
   indexSuccess: 'Here are your stories',
   indexFailure: 'Oops something went wrong',
   deleteSuccess: 'Successfully Destroyed',
-  deleteFailure: 'Destroy Failure'
+  deleteFailure: 'Destroy Failure',
+  updateSuccess: 'Updated story successfully',
+  updateFailure: 'Update story failed'
 }

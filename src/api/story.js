@@ -45,3 +45,18 @@ export const deleteStory = (storyId, user) => {
     }
   })
 }
+
+export const updateStory = (storyId, newStory, user) => {
+  return axios({
+    url: apiUrl + '/stories/' + storyId,
+    method: 'PATCH',
+    headers: {
+      'Authorization': `Token ${user.token}`
+    },
+    data: {
+      story: {
+        title: newStory
+      }
+    }
+  })
+}

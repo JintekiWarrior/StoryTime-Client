@@ -11,6 +11,7 @@ import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 import MainContent from './components/MainContent/MainContent'
 import ShowStory from './components/MainContent/ShowStory/ShowStory'
+import UpdateStory from './components/MainContent/UpdateStory/UpdateStory'
 
 class App extends Component {
   constructor (props) {
@@ -74,6 +75,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} exact path='/content/:id' render={() => (
             <ShowStory user={user} msgAlert={this.msgAlert} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/content/:id/edit' render={() => (
+            <UpdateStory user={user} msgAlert={this.msgAlert} />
           )} />
         </main>
       </Fragment>
