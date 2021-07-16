@@ -5,5 +5,10 @@ export default {
   signInFailure: 'Failed to sign in. Check your email and password and try again.',
   signOutSuccess: 'Come back soon!',
   changePasswordSuccess: 'Password changed successfully!',
-  changePasswordFailure: 'Failed to change passwords. Check your old password and try again.'
+  changePasswordFailure: 'Failed to change passwords. Check your old password and try again.',
+  // App messages
+  createSuccess: 'You have created a story',
+  createFailure: 'Oops a story couldn\'t be created.',
+  indexSuccess: 'Here are your stories',
+  indexFailure: 'Oops something went wrong'
 }

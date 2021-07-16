@@ -2,8 +2,6 @@ import apiUrl from '../apiConfig'
 import axios from 'axios'
 
 export const createStory = (story, user) => {
-  console.log('this is story', story)
-  console.log('this is user', user.id)
   return axios({
     url: apiUrl + '/stories/',
     method: 'POST',
@@ -21,6 +19,16 @@ export const createStory = (story, user) => {
 export const indexStory = (user) => {
   return axios({
     url: apiUrl + '/stories/',
+    method: 'GET',
+    headers: {
+      'Authorization': `Token ${user.token}`
+    }
+  })
+}
+
+export const showStory = (user, storyId) => {
+  return axios({
+    url: apiUrl + '/stories/' + storyId,
     method: 'GET',
     headers: {
       'Authorization': `Token ${user.token}`

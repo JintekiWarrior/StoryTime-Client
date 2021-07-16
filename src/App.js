@@ -66,8 +66,10 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
+
+          {/* App components */}
           <AuthenticatedRoute user={user} path='/content' render={() => (
-            <MainContent user={user} />
+            <MainContent user={user} msgAlert={this.msgAlert} />
           )} />
         </main>
       </Fragment>
