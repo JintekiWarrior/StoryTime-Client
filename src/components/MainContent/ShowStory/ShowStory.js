@@ -3,6 +3,8 @@ import { Redirect } from 'react-router-dom'
 import { showStory, deleteStory } from './../../../api/story.js'
 import { withRouter } from 'react-router'
 
+import CreateChapter from './CreateChapter/CreateChapter'
+import ShowChapter from './ShowChapter/ShowChapter'
 import messages from '../../AutoDismissAlert/messages'
 import Button from 'react-bootstrap/Button'
 
@@ -60,8 +62,10 @@ const ShowStory = (props) => {
   return (
     <Fragment>
       <h2>{story}</h2>
+      <ShowChapter/>
       <Button onClick={storyDestroy}>Destroy</Button>
       <Button onClick={storyUpdate}>Edit</Button>
+      <CreateChapter story={id} user={props.user} />
     </Fragment>
   )
 }

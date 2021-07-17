@@ -12,8 +12,9 @@ const CreateStory = (props) => {
   const handleChange = (event) => {
     setStory(event.target.value)
   }
+
   // will add a function to handle a submit for when the story is created.
-  const handleSubmit = (event) => {
+  const handleSubmitStory = (event) => {
     // prevent the page from rendering whenever the button is clicked
     event.preventDefault()
     // axios call to make a post request to the backend server
@@ -32,10 +33,12 @@ const CreateStory = (props) => {
         })
       })
   }
+
   // add a fragment to return the form and submit button to create the story.
   return (
     <Fragment>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmitStory}>
+        <Form.Label>Story Title</Form.Label>
         <Form.Control
           placeholder="Title"
           value={story}
