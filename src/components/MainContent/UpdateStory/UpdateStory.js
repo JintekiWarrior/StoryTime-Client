@@ -44,6 +44,7 @@ const UpdateStory = (props) => {
   return (
     <Fragment>
       <Form onSubmit={handleSubmit}>
+        <Form.Label>Update Story</Form.Label>
         <Form.Control
           placeholder="Title"
           name="newStory"

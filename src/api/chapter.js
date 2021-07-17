@@ -27,3 +27,13 @@ export const indexChapters = (user) => {
     }
   })
 }
+
+export const showChapter = (chapterId, user) => {
+  return axios({
+    url: apiUrl + '/chapters/' + chapterId,
+    method: 'GET',
+    headers: {
+      'Authorization': `Token ${user.token}`
+    }
+  })
+}
