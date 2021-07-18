@@ -37,3 +37,13 @@ export const showChapter = (chapterId, user) => {
     }
   })
 }
+
+export const deleteChapter = (chapterId, user) => {
+  return axios({
+    url: apiUrl + '/chapters/' + chapterId,
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Token ${user.token}`
+    }
+  })
+}
