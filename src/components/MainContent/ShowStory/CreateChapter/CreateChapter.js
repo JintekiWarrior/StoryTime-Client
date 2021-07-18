@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from 'react'
-import { Redirect } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import ChapterForm from './../../shared/ChapterForm'
 import { createChapter } from './../../../../api/chapter'
@@ -12,7 +11,6 @@ const CreateChapter = (props) => {
   // set a state variable for the chapter data
   const [chapter, setChapter] = useState({ name: '', body: '' })
   // set a state variable to check if the story has been submitted
-  const [isSubmited, setIsSubmited] = useState(false)
 
   const handleChange = (event) => {
     event.persist()
@@ -31,7 +29,7 @@ const CreateChapter = (props) => {
         message: messages.createChapterSuccess,
         variant: 'success'
       }))
-      .then(() => setIsSubmited(true))
+      .then(() => props.setIsUpdated(true))
       .catch(error => {
         props.msgAlert({
           heading: 'Create Failed: ' + error.message,
@@ -55,10 +53,6 @@ const CreateChapter = (props) => {
         handleSubmit={handleSubmit}
       />
     )
-  }
-  if (isSubmited) {
-    console.log(isSubmited)
-    return <Redirect to={'/content'}/>
   }
   return (
     <Fragment>

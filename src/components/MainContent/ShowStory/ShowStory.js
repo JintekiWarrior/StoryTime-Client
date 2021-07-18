@@ -15,6 +15,9 @@ const ShowStory = (props) => {
   const [destroy, setDestroy] = useState(false)
   // state to check if the edit button was clicked
   const [edit, setEdit] = useState(false)
+  // state variable to be passed to the create chapter component which will allow
+  // the index component to update when changed.
+  const [isUpdated, setIsUpdated] = useState(false)
   // use use effect to capture the mounting of the story component and make an
   // axios call to show that one story.
   const { id } = props.match.params
@@ -24,7 +27,7 @@ const ShowStory = (props) => {
         console.log('I got a story', res)
         setStory(res.data.story.title)
       })
-  }, [])
+  }, [isUpdated])
 
   // button to go to the story update page
   const storyUpdate = () => {
@@ -62,10 +65,14 @@ const ShowStory = (props) => {
   return (
     <Fragment>
       <h2>{story}</h2>
-      <IndexChapters story={id} user={props.user} />
+      <IndexChapters isUpdated={isUpdated} story={id} user={props.user} />
       <Button onClick={storyDestroy}>Destroy</Button>
       <Button onClick={storyUpdate}>Edit</Button>
-      <CreateChapter story={id} user={props.user} msgAlert={props.msgAlert} />
+      <CreateChapter
+        isUpdated={isUpdated}
+        setIsUpdated={setIsUpdated}
+        story={id} user={props.user}
+        msgAlert={props.msgAlert} />
     </Fragment>
   )
 }

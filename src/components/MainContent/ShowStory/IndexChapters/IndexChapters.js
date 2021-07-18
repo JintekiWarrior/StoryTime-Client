@@ -14,7 +14,7 @@ const IndexChapters = (props) => {
         setChapters(res.data.chapter)
         console.log('chapters state variable', chapters)
       })
-  }, [])
+  }, [props.isUpdated])
 
   // check if edit chapter is true. If it is redirect user to the edit chapter
   // page.
