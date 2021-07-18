@@ -27,6 +27,7 @@ const IndexChapters = (props) => {
           <h3>{chapter.name}</h3>
           <p>{chapter.body}</p>
           <Link to={`/chapter/${chapter.id}`}>Show</Link>
+          <Link to={`/chapter/${chapter.id}/edit`}>Edit</Link>
         </div>
       ))}
     </Fragment>

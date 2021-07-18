@@ -47,3 +47,19 @@ export const deleteChapter = (chapterId, user) => {
     }
   })
 }
+
+export const updateChapter = (chapterName, chapterBody, chapterId, user) => {
+  return axios({
+    url: apiUrl + '/chapters/' + chapterId,
+    method: 'PATCH',
+    headers: {
+      'Authorization': `Token ${user.token}`
+    },
+    data: {
+      chapter: {
+        name: chapterName,
+        body: chapterBody
+      }
+    }
+  })
+}

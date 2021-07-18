@@ -13,6 +13,7 @@ import MainContent from './components/MainContent/MainContent'
 import ShowStory from './components/MainContent/ShowStory/ShowStory'
 import UpdateStory from './components/MainContent/UpdateStory/UpdateStory'
 import ShowChapter from './components/MainContent/ShowStory/ShowChapter/ShowChapter'
+import UpdateChapter from './components/MainContent/ShowStory/UpdateChapter/UpdateChapter'
 
 class App extends Component {
   constructor (props) {
@@ -82,6 +83,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} exact path='/chapter/:id' render={() => (
             <ShowChapter user={user} msgAlert={this.msgAlert} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/chapter/:id/edit' render={() => (
+            <UpdateChapter user={user} msgAlert={this.msgAlert} />
           )} />
         </main>
       </Fragment>
