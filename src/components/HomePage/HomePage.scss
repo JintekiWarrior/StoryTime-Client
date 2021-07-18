@@ -1,0 +1,80 @@
+$Navyblue: #293241;
+$Blue: #3d5a80;
+$Matblue: #98c1d9;
+$Lightblue: #e0fbfc;
+$Orange: #ee6c4d;
+$White: #fbf2ef;
+$Charcoal: #23282f;
+
+#home-page-main-image {
+  height: 60vh;
+  margin-top: 1.5rem;
+  background-image: url('./images/drzzt-img.png');
+  background-position: 40% 20%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: .5rem solid $White;
+  border-radius: 2rem;
+  box-shadow: 1rem .5rem .5rem $Charcoal;
+
+  &:hover {
+    background-position: 60% 40%;
+  }
+}
+
+h1 {
+  margin-top: 1.5rem;
+  color: $White;
+  text-align: center;
+  font-size: 5rem;
+  text-shadow: .4rem .4rem $Charcoal;
+
+  &:hover {
+    font-size: 5.5rem;
+  }
+}
+
+#incline-line {
+  border-width: 10px;
+  border-radius: 10px;
+  width: 100%;
+  margin: auto;
+  margin-top: 15%;
+  margin-bottom: 15%;
+  transform: rotate(10deg);
+  border-color: $White;
+}
+
+.begin-writing-container {
+  height: 50vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.begin-writing-link {
+  font-size: 3rem;
+  color: $White;
+
+  &:hover {
+    font-size: 3.2rem;
+    color: $Matblue;
+  }
+}
+
+.home-quote {
+  font-size: 1.5rem;
+  color: $White;
+}
+
+#incline-line-2 {
+  border-width: 10px;
+  border-radius: 10px;
+  width: 100%;
+  margin: auto;
+  margin-top: 15%;
+  margin-bottom: 15%;
+  transform: rotate(-10deg);
+  border-color: $White;
+}

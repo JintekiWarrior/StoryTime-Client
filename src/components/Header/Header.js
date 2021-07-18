@@ -1,32 +1,33 @@
 import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
+import './Header.scss'
 
 const authenticatedOptions = (
   <Fragment>
-    <Nav.Link href="#change-password">Change Password</Nav.Link>
-    <Nav.Link href="#sign-out">Sign Out</Nav.Link>
-    <Nav.Link href="#content">content</Nav.Link>
+    <Nav.Link className="nav-link" href="#change-password">Change Password</Nav.Link>
+    <Nav.Link className="nav-link" href="#sign-out">Sign Out</Nav.Link>
+    <Nav.Link className="nav-link" href="#content">content</Nav.Link>
   </Fragment>
 )
 
 const unauthenticatedOptions = (
   <Fragment>
-    <Nav.Link href="#sign-up">Sign Up</Nav.Link>
-    <Nav.Link href="#sign-in">Sign In</Nav.Link>
+    <Nav.Link className="nav-link" href="#sign-up">Sign Up</Nav.Link>
+    <Nav.Link className="nav-link" href="#sign-in">Sign In</Nav.Link>
   </Fragment>
 )
 
 const alwaysOptions = (
   <Fragment>
-    <Nav.Link href="#/">Home</Nav.Link>
+    <Nav.Link className="nav-link" href="#/">Home</Nav.Link>
   </Fragment>
 )
 
 const Header = ({ user }) => (
   <Navbar bg="primary" variant="dark" expand="md">
-    <Navbar.Brand href="#">
-      react-auth-template
+    <Navbar.Brand href="#" id="story-time-header">
+      Story Time
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">

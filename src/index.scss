@@ -1,9 +1,23 @@
+$Navyblue: #293241;
+$Blue: #3d5a80;
+$Matblue: #98c1d9;
+$Lightblue: #e0fbfc;
+$Orange: #ee6c4d;
+$White: #fbf2ef;
+
+$theme-colors: (
+  "primary": $Blue
+);
+
 @import '~bootstrap/scss/bootstrap';
+
+$Navyblue: #293241;
 
 html, body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
   height: 100vh;
-  font-size: 62.5;
+  font-size: 62.5%;
+  background-color: $Navyblue
 }
