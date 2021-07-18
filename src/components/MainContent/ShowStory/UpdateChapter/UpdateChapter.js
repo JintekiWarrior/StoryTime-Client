@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react'
 import ChapterForm from './../../shared/ChapterForm'
 import { withRouter } from 'react-router'
 import { updateChapter } from './../../../../api/chapter'
+import messages from './../../../AutoDismissAlert/messages'
 
 const UpdateChapter = (props) => {
   // state variable to store the updated information
@@ -22,7 +23,18 @@ const UpdateChapter = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     updateChapter(chapter.name, chapter.body, id, props.user)
-      .then(res => console.log(res))
+      .then(() => props.msgAlert({
+        heading: 'Update Success',
+        message: messages.updateChapterSuccess,
+        variant: 'success'
+      }))
+      .catch(error => {
+        props.msgAlert({
+          heading: 'Update Failed: ' + error.message,
+          message: messages.updateChapterFailure,
+          variant: 'danger'
+        })
+      })
   }
   console.log(id)
   // success message and redirect

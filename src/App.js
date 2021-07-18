@@ -9,6 +9,7 @@ import SignUp from './components/SignUp/SignUp'
 import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
+import HomePage from './components/HomePage/HomePage'
 import MainContent from './components/MainContent/MainContent'
 import ShowStory from './components/MainContent/ShowStory/ShowStory'
 import UpdateStory from './components/MainContent/UpdateStory/UpdateStory'
@@ -70,6 +71,7 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
+          <Route path='/' component={HomePage}/>
 
           {/* App components */}
           <AuthenticatedRoute user={user} exact path='/content' render={() => (

@@ -4,6 +4,7 @@ import { withRouter } from 'react-router'
 import ChapterForm from './../../shared/ChapterForm'
 import { createChapter } from './../../../../api/chapter'
 import Button from 'react-bootstrap/Button'
+import messages from './../../../AutoDismissAlert/messages'
 
 const CreateChapter = (props) => {
   // add state to check if the user wants to show the chapter form
@@ -25,7 +26,19 @@ const CreateChapter = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     createChapter(chapter.name, chapter.body, props.story, props.user)
-    setIsSubmited(true)
+      .then(() => props.msgAlert({
+        heading: 'Create Success',
+        message: messages.createChapterSuccess,
+        variant: 'success'
+      }))
+      .then(() => setIsSubmited(true))
+      .catch(error => {
+        props.msgAlert({
+          heading: 'Create Failed: ' + error.message,
+          message: messages.createChapterFailure,
+          variant: 'danger'
+        })
+      })
   }
 
   // handler function for the add chapter button

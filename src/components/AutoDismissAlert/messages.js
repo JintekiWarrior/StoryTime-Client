@@ -6,7 +6,7 @@ export default {
   signOutSuccess: 'Come back soon!',
   changePasswordSuccess: 'Password changed successfully!',
   changePasswordFailure: 'Failed to change passwords. Check your old password and try again.',
-  // App messages
+  // App story messages
   createSuccess: 'You have created a story',
   createFailure: 'Oops a story couldn\'t be created.',
   indexSuccess: 'Here are your stories',
@@ -14,5 +14,12 @@ export default {
   deleteSuccess: 'Successfully Destroyed',
   deleteFailure: 'Destroy Failure',
   updateSuccess: 'Updated story successfully',
-  updateFailure: 'Update story failed'
+  updateFailure: 'Update story failed',
+  // App chapter messages
+  createChapterSuccess: 'You have created a chapter',
+  createChapterFailure: 'Couldn\'t create a chapter',
+  deleteChapterSuccess: 'Successfully destroyed chapter',
+  deleteChapterFailure: 'Failed to destroy a chapter',
+  updateChapterSuccess: 'Updated chapter successfully',
+  updateChapterFailure: 'Couldn\'t update a chapter'
 }

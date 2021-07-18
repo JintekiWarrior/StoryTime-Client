@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import { showChapter, deleteChapter } from './../../../../api/chapter'
 import { withRouter } from 'react-router-dom'
+import messages from './../../../AutoDismissAlert/messages'
 
 import Button from 'react-bootstrap/Button'
 
@@ -20,7 +21,19 @@ const ShowChapter = (props) => {
   const chapterDelete = (event) => {
     event.preventDefault()
     deleteChapter(id, props.user)
+      .then(() => props.msgAlert({
+        heading: 'Delete Success',
+        message: messages.deleteChapterSuccess,
+        variant: 'success'
+      }))
       .then(() => setChapterDeleted(true))
+      .catch(error => {
+        props.msgAlert({
+          heading: 'Delete Failed: ' + error.message,
+          message: messages.deleteChapterFailure,
+          variant: 'danger'
+        })
+      })
   }
 
   if (chapterDeleted) {

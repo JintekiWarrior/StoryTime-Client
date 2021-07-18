@@ -65,7 +65,7 @@ const ShowStory = (props) => {
       <IndexChapters story={id} user={props.user} />
       <Button onClick={storyDestroy}>Destroy</Button>
       <Button onClick={storyUpdate}>Edit</Button>
-      <CreateChapter story={id} user={props.user} />
+      <CreateChapter story={id} user={props.user} msgAlert={props.msgAlert} />
     </Fragment>
   )
 }
