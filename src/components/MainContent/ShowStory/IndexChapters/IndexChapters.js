@@ -24,10 +24,10 @@ const IndexChapters = (props) => {
         return chapter.story.id.toString() === props.story.toString()
       }).map(chapter => (
         <div id='chapter-container' key={chapter.id}>
-          <h3>{chapter.name}</h3>
-          <p>{chapter.body}</p>
-          <Link to={`/chapter/${chapter.id}`}>Show</Link>
-          <Link to={`/chapter/${chapter.id}/edit`}>Edit</Link>
+          <h3 id="chapter-title">{chapter.name}</h3>
+          <p id="chapter-body">{chapter.body}</p>
+          <Link className="crud-link" to={`/chapter/${chapter.id}`}>Show</Link>
+          <Link className="crud-link" to={`/chapter/${chapter.id}/edit`}>Edit</Link>
         </div>
       ))}
     </Fragment>

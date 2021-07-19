@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import { showStory, deleteStory } from './../../../api/story.js'
 import { withRouter } from 'react-router'
+import './ShowStory.scss'
 
 import CreateChapter from './CreateChapter/CreateChapter'
 import IndexChapters from './IndexChapters/IndexChapters'
@@ -64,10 +65,10 @@ const ShowStory = (props) => {
   // render the story to the webpage
   return (
     <Fragment>
-      <h2>{story}</h2>
+      <h2 id="story-title">{story}</h2>
+      <Button className="story-crud-button" onClick={storyUpdate}>Edit Story</Button>
+      <Button className="story-crud-button" onClick={storyDestroy}>Destroy Story</Button>
       <IndexChapters isUpdated={isUpdated} story={id} user={props.user} />
-      <Button onClick={storyDestroy}>Destroy</Button>
-      <Button onClick={storyUpdate}>Edit</Button>
       <CreateChapter
         isUpdated={isUpdated}
         setIsUpdated={setIsUpdated}

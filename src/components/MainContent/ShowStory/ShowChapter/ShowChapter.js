@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react'
 import { showChapter, deleteChapter } from './../../../../api/chapter'
 import { withRouter } from 'react-router-dom'
 import messages from './../../../AutoDismissAlert/messages'
+import './ShowChapter.scss'
 
 import Button from 'react-bootstrap/Button'
 
@@ -43,9 +44,9 @@ const ShowChapter = (props) => {
   console.log('chapter:', chapter)
   return (
     <Fragment>
-      <h3>{chapter.name}</h3>
-      <p>{chapter.body}</p>
-      <Button onClick={chapterDelete}>Delete</Button>
+      <h3 id="chapter-title">{chapter.name}</h3>
+      <p id="chapter-body">{chapter.body}</p>
+      <Button id="delete-chapter-button" onClick={chapterDelete}>Delete</Button>
     </Fragment>
   )
 }

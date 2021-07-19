@@ -28,4 +28,11 @@
 #story-index-link {
   font-size: 2.8rem;
   color: $White;
+  margin-left: 2rem;
+
+  &:hover {
+    font-size: 2.5rem;
+    color: $Matblue;
+    text-decoration: none;
+  }
 }

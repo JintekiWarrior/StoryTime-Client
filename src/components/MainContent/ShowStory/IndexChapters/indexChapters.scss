@@ -1,3 +1,33 @@
+@import './../../../../variables.scss';
+
 #chapter-container {
-  border: 1px solid black;
+  border: 2px solid $White;
+  border-radius: 15px;
+  padding-bottom: 5rem;
+  margin-bottom: 1.5rem;
+}
+
+#chapter-title {
+  font-size: 2.5rem;
+  color: $White;
+  text-align: center;
+}
+
+#chapter-body {
+  font-size: 1.8rem;
+  color: $White;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.crud-link {
+  font-size: 1.5rem;
+  color: $Matblue;
+  margin-left: 2rem;
+
+  &:hover {
+    color: $Matblue;
+    font-size: 1.8rem;
+    text-decoration: none;
+  }
 }
