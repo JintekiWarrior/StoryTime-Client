@@ -6,8 +6,9 @@ const ChapterForm = ({ chapter, handleSubmit, handleChange }) => (
   <Fragment>
     <Form onSubmit={handleSubmit}>
       <Form.Group>
-        <Form.Label>Chapter Name</Form.Label>
+        <Form.Label className="form-label">Chapter Name</Form.Label>
         <Form.Control
+          className="title-form-input"
           placeholder="Chapter Name"
           value={chapter.name}
           name="name"
@@ -15,17 +16,18 @@ const ChapterForm = ({ chapter, handleSubmit, handleChange }) => (
         />
       </Form.Group>
       <Form.Group>
-        <Form.Label>Chapter Body</Form.Label>
+        <Form.Label className="form-label">Chapter Body</Form.Label>
         <Form.Control
+          className="form-text-area"
           placeholder="once upon a time..."
           value={chapter.body}
           name="body"
           onChange={handleChange}
           as="textarea"
-          row={5}
+          rows={15}
         />
       </Form.Group>
-      <Button type="submit" variant="primary">Submit</Button>
+      <Button className="submit-form-button" type="submit" variant="primary">Submit</Button>
     </Form>
   </Fragment>
 )

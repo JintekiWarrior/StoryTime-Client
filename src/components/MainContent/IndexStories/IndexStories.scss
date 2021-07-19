@@ -1,0 +1,31 @@
+@import './../../../variables.scss';
+
+#story-index-container {
+  border: 2px solid $White;
+  border-radius: 15px;
+  padding-bottom: 5rem;
+  margin-bottom: 1.5rem;
+}
+
+#show-stories-button {
+  font-size: 3rem;
+  color: $White;
+  display: inline;
+
+  &:hover {
+    font-size: 1.5;
+    color: $Matblue;
+    cursor: pointer;
+  }
+}
+
+#show-stories-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#story-index-link {
+  font-size: 2.8rem;
+  color: $White;
+}

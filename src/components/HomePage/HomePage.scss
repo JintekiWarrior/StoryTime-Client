@@ -1,10 +1,4 @@
-$Navyblue: #293241;
-$Blue: #3d5a80;
-$Matblue: #98c1d9;
-$Lightblue: #e0fbfc;
-$Orange: #ee6c4d;
-$White: #fbf2ef;
-$Charcoal: #23282f;
+@import './../../variables.scss';
 
 #home-page-main-image {
   height: 60vh;
@@ -54,17 +48,17 @@ h1 {
 }
 
 .begin-writing-link {
-  font-size: 3rem;
+  font-size: 3.8rem;
   color: $White;
 
   &:hover {
-    font-size: 3.2rem;
+    font-size: 3.5rem;
     color: $Matblue;
   }
 }
 
 .home-quote {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: $White;
 }
 

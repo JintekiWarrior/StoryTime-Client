@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import { createStory } from './../../../api/story.js'
 import messages from '../../AutoDismissAlert/messages'
+import './CreateStory.scss'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -19,12 +20,12 @@ const CreateStory = (props) => {
     event.preventDefault()
     // axios call to make a post request to the backend server
     createStory(story, props.user)
-      .then(res => console.log('this is the created story ', res))
       .then(() => props.msgAlert({
         heading: 'Create Successful',
         message: messages.createSuccess,
         variant: 'success'
       }))
+      .then(setStory(''))
       .catch(error => {
         props.msgAlert({
           heading: 'Creation Failed: ' + error.message,
@@ -38,14 +39,15 @@ const CreateStory = (props) => {
   return (
     <Fragment>
       <Form onSubmit={handleSubmitStory}>
-        <Form.Label>Story Title</Form.Label>
+        <Form.Label className="form-label">Story Title</Form.Label>
         <Form.Control
-          placeholder="Title"
+          className="title-form-input"
+          placeholder="Story Title"
           value={story}
           name="storyTitle"
           onChange={handleChange}
         />
-        <Button type="submit" variant="primary">Submit</Button>
+        <Button className="submit-form-button" id="create-story-submit" type="submit" variant="primary">Submit</Button>
       </Form>
     </Fragment>
   )

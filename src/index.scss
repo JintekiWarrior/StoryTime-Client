@@ -1,9 +1,4 @@
-$Navyblue: #293241;
-$Blue: #3d5a80;
-$Matblue: #98c1d9;
-$Lightblue: #e0fbfc;
-$Orange: #ee6c4d;
-$White: #fbf2ef;
+@import './variables.scss';
 
 $theme-colors: (
   "primary": $Blue
@@ -23,16 +18,42 @@ html, body {
 }
 
 .sign-heading {
-  font-size: 1.8rem;
+  font-size: 4rem;
   color: $White;
   margin-top: 18%;
 }
 
 .sign-form-label {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: $White;
 }
 
 .sign-form-input {
-  font-size: 1.3rem;
+  font-size: 1.8rem;
+}
+
+.sign-form-button {
+  font-size: 1.8rem;
+}
+
+// all the form labels in the app
+.form-label {
+  font-size: 2rem;
+  color: $White;
+}
+
+// all the form inputs in the app for titles
+.title-form-input {
+  font-size: 1.8rem;
+}
+
+// submit button for all the forms
+.submit-form-button {
+  font-size: 1.8rem;
+}
+
+// form for all the text areas in the app
+.form-text-area {
+  font-size: 1.8rem;
+  height: 60rem;
 }

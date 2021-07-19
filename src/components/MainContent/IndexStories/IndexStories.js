@@ -2,8 +2,7 @@ import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { indexStory } from './../../../api/story.js'
 import messages from '../../AutoDismissAlert/messages'
-
-import Button from 'react-bootstrap/Button'
+import './IndexStories.scss'
 
 const IndexStories = (props) => {
   // state variable to store the story data
@@ -32,11 +31,13 @@ const IndexStories = (props) => {
   // render button to the screen
   return (
     <Fragment>
-      <Button onClick={handleClick} variant='primary'>Show Stories</Button>
+      <div id="show-stories-container">
+        <p id="show-stories-button" onClick={handleClick} variant='primary'>Show Stories</p>
+      </div>
       {stories.map(story => (
-        <h3 key={story.id}>
-          <Link to={`/content/${story.id}`}>{story.title}</Link>
-        </h3>
+        <div id="story-index-container" key={story.id}>
+          <Link id="story-index-link" to={`/content/${story.id}`}>{story.title}</Link>
+        </div>
       ))}
     </Fragment>
   )

@@ -44,13 +44,14 @@ const UpdateStory = (props) => {
   return (
     <Fragment>
       <Form onSubmit={handleSubmit}>
-        <Form.Label>Update Story</Form.Label>
+        <Form.Label className="form-label">Update Story</Form.Label>
         <Form.Control
+          className="title-form-input"
           placeholder="Title"
           name="newStory"
           onChange={handleChange}
         />
-        <Button type="submit" variant="primary">Submit</Button>
+        <Button className="submit-form-button" type="submit" variant="primary">Submit</Button>
       </Form>
     </Fragment>
   )

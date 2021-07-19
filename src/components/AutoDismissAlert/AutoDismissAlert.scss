@@ -1,18 +1,23 @@
 .alert {
   align-items: center;
   animation: .5s ease-in-out 0s 1 light-bounce-in;
-  bottom: 1rem;
+  bottom: 1.6rem;
   display: flex;
   left: 0;
   margin: auto;
-  max-width: 30rem;
+  max-width: 40rem;
   position: fixed;
   right: 0;
   z-index: 10000;
 
   .alert-body {
     margin-bottom: 0;
+    font-size: 1.8rem;
   }
+}
+
+.alert-heading {
+  font-size: 2.5rem;
 }
 
 .close {
