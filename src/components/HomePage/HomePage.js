@@ -3,6 +3,9 @@ import Nav from 'react-bootstrap/Nav'
 import './HomePage.scss'
 
 const HomePage = () => {
+  // Home page component. The landing page and first thing the user sees when
+  // entering the site. Consists of an image, some hr lines, a create story link,
+  // with a quote and a show stories link with a quote.
   return (
     <Fragment>
       <h1>Story Time</h1>

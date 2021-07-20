@@ -5,17 +5,27 @@ import messages from '../../AutoDismissAlert/messages'
 import SortStories from './SortStories'
 import './IndexStories.scss'
 
+// This component is used on the main content page. It is used to show all the stories
+// that have been created by the user. It is passed four props.
+// isCreated: to check if a story has been created to allow it to update the list.
+// setIscreated: to set the iscreatd value back to false if there are no stories created
+// user: the axios call needs a token
+// msgAlert: to alert the user if the index has been successful or not.
 const IndexStories = (props) => {
   // state variable to store the story data
   const [stories, setStories] = useState([])
 
+  // function to handle the axios call and get all the data of stories created
+  // by the user.
   const handleClick = (event) => {
     event.preventDefault()
     indexStory(props.user)
       .then(res => {
+        // sets the state variable to the list of stories
         setStories(res.data.story)
-        stories <= 0 ? props.setIsCreated(false) : props.setIsCreated(true)
-        console.log('these are stories.', stories)
+        // if the variable is empty set isCreated to false which will show a message.
+        // otherwise it stays true and no message pops up.
+        if (stories <= 0) props.setIsCreated(false)
       })
       .then(() => props.msgAlert({
         heading: 'Index Successful',

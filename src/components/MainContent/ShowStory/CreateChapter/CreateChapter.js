@@ -31,6 +31,7 @@ const CreateChapter = (props) => {
         variant: 'success'
       }))
       .then(() => props.setIsUpdated(true))
+      .then(() => setChapter({ name: '', body: '' }))
       .catch(error => {
         props.msgAlert({
           heading: 'Create Failed: ' + error.message,

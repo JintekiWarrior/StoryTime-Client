@@ -6,6 +6,12 @@ import './CreateStory.scss'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
+// prop which allows the user to create a story and save the data. This component
+// is used in the main content page. It has four props bieng passed down to it.
+// isCreated: checks if the story was created
+// setIscreated: to set isCreated if the story is created
+// user: to pass down the user token
+// msgalert: function to show a msg alert or error depending on the axios call
 const CreateStory = (props) => {
   // make a state to create a story
   const [story, setStory] = useState('')
@@ -18,13 +24,18 @@ const CreateStory = (props) => {
   const handleSubmitStory = (event) => {
     // prevent the page from rendering whenever the button is clicked
     event.preventDefault()
-    // axios call to make a post request to the backend server
+
+    // axios call to make a post request to the backend server. The request
+    // data to be sent is the story which consists of a title, and the user
+    // token.
     createStory(story, props.user)
       .then(() => props.msgAlert({
         heading: 'Create Successful',
         message: messages.createSuccess,
         variant: 'success'
       }))
+      // this promise empties the story state, to clear the form.
+      // It also sets the prop Iscreated to true if it is not already.
       .then(() => {
         setStory('')
         props.setIsCreated(true)
