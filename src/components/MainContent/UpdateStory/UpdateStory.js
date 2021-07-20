@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button'
 import { Redirect } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import messages from '../../AutoDismissAlert/messages'
+import './UpdateStory.scss'
 
 const UpdateStory = (props) => {
   // variable to store the updated story
@@ -51,7 +52,7 @@ const UpdateStory = (props) => {
           name="newStory"
           onChange={handleChange}
         />
-        <Button className="submit-form-button" type="submit" variant="primary">Submit</Button>
+        <Button id="update-form-button" className="submit-form-button" type="submit" variant="primary">Submit</Button>
       </Form>
     </Fragment>
   )

@@ -4,6 +4,7 @@ import ChapterForm from './../../shared/ChapterForm'
 import { createChapter } from './../../../../api/chapter'
 import Button from 'react-bootstrap/Button'
 import messages from './../../../AutoDismissAlert/messages'
+import './CreateChapter.scss'
 
 const CreateChapter = (props) => {
   // add state to check if the user wants to show the chapter form
@@ -56,7 +57,7 @@ const CreateChapter = (props) => {
   }
   return (
     <Fragment>
-      <Button onClick={showChapterForm} variant="primary">Add Chapter</Button>
+      <Button id="add-chapter-button" onClick={showChapterForm} variant="primary">Add Chapter</Button>
     </Fragment>
   )
 }

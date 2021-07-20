@@ -21,7 +21,7 @@
 
 #show-stories-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -35,4 +35,11 @@
     color: $Matblue;
     text-decoration: none;
   }
+}
+
+#select-menu {
+  font-size: 2rem;
+  height: 3.5rem;
+  width: 8rem;
+  margin-left: 2rem;
 }
