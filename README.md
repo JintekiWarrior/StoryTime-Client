@@ -4,13 +4,24 @@ story will have a title and you can add chapters to that story for content. The
 stories will be well organized and only you can view them. However functionality
 for others to view them shall be coming soon.
 
+![Story time landing page](./Readme-Images/Story-time-landingpage.jpg)
+
 ### Repo's
 
 [Client Repo](https://github.com/JintekiWarrior/Story_Time_Frontend)
 [Server Repo](https://github.com/JintekiWarrior/Story_Time_Backend)
 
 ### WireFrame's
+[Wireframes](https://imgur.com/gallery/hAbRPI4)
 
+### User Stories
+As a writer I want a title for my story
+As a writer I want to add chapter's to my story
+As a writer I want to edit my stories
+As a writer I want to view my stories
+
+### Relationship
+User -|--< Stories -|--< Chapters
 
 ### Technologies
 React, Javascript, HTML, CSS, Django, Python, Postgres
