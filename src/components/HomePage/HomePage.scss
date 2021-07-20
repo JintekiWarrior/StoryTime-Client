@@ -2,7 +2,7 @@
 
 #home-page-main-image {
   height: 60vh;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   background-image: url('./images/drzzt-img.png');
   background-position: 40% 20%;
   background-size: cover;
@@ -10,9 +10,10 @@
   border: .5rem solid $White;
   border-radius: 2rem;
   box-shadow: 1rem .5rem .5rem $Charcoal;
+  transition: transform .5s ease;
 
   &:hover {
-    background-position: 60% 40%;
+    transform: scale(1.1)
   }
 }
 
@@ -23,9 +24,6 @@ h1 {
   font-size: 5rem;
   text-shadow: .4rem .4rem $Charcoal;
 
-  &:hover {
-    font-size: 5.5rem;
-  }
 }
 
 #incline-line {
@@ -33,10 +31,11 @@ h1 {
   border-radius: 10px;
   width: 100%;
   margin: auto;
-  margin-top: 15%;
+  margin-top: 20%;
   margin-bottom: 15%;
   transform: rotate(10deg);
   border-color: $White;
+  box-shadow: .5rem .5rem $Charcoal;
 }
 
 .begin-writing-container {

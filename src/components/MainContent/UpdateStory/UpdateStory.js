@@ -45,7 +45,7 @@ const UpdateStory = (props) => {
   return (
     <Fragment>
       <Form onSubmit={handleSubmit}>
-        <Form.Label className="form-label">Update Story</Form.Label>
+        <Form.Label id="update-story-label" className="form-label">Update Story</Form.Label>
         <Form.Control
           className="title-form-input"
           placeholder="Title"
