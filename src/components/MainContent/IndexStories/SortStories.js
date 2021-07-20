@@ -17,6 +17,9 @@ const SortStories = (props) => {
         if (parseInt(a[sortProperty])) {
           return a === b ? 0 : a > b ? 1 : -1
         }
+        if (!a[sortProperty]) {
+          return
+        }
         const x = a[sortProperty].toUpperCase()
         const y = b[sortProperty].toUpperCase()
         // console.log('data types', b[type], a[type])

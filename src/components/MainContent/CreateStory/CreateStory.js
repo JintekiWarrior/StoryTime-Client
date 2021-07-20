@@ -25,7 +25,10 @@ const CreateStory = (props) => {
         message: messages.createSuccess,
         variant: 'success'
       }))
-      .then(setStory(''))
+      .then(() => {
+        setStory('')
+        props.setIsCreated(true)
+      })
       .catch(error => {
         props.msgAlert({
           heading: 'Creation Failed: ' + error.message,

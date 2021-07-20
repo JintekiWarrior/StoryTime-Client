@@ -5,17 +5,22 @@ import './indexChapters.scss'
 
 const IndexChapters = (props) => {
   const [chapters, setChapters] = useState([])
-  // Add a state variable to check if the user wants to edit the chapter.
+  // variable to check if the chapters have been indexed
+  const [isIndexed, setIsIndexed] = useState(false)
 
   useEffect(() => {
     indexChapters(props.user)
       .then(res => {
-        console.log('these are chapters', res)
         setChapters(res.data.chapter)
-        console.log('chapters state variable', chapters)
+      })
+      .catch(() => {
+        setIsIndexed(true)
       })
   }, [props.isUpdated])
 
+  if (chapters.length <= 0 && isIndexed) {
+    return <p id="no-chapters-message">No chapters added. Write some!</p>
+  }
   // check if edit chapter is true. If it is redirect user to the edit chapter
   // page.
   return (

@@ -5,6 +5,8 @@
   border-radius: 15px;
   padding-bottom: 5rem;
   margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 #show-stories-button {
@@ -17,6 +19,19 @@
     color: $Matblue;
     cursor: pointer;
   }
+}
+
+#story-create-date {
+  font-size: 2rem;
+  color: $White;
+  text-align: right;
+  margin-right: 1rem;
+  margin-top: .5rem;
+}
+
+#no-stories-message {
+  font-size: 3rem;
+  color: $White;
 }
 
 #show-stories-container {
