@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react'
+import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { indexStory } from './../../../api/story.js'
 import messages from '../../AutoDismissAlert/messages'
@@ -8,14 +8,13 @@ import './IndexStories.scss'
 const IndexStories = (props) => {
   // state variable to store the story data
   const [stories, setStories] = useState([])
-  // vairable to check if the indexStory api went off.
 
   const handleClick = (event) => {
     event.preventDefault()
     indexStory(props.user)
       .then(res => {
         setStories(res.data.story)
-        props.setIsCreated(true)
+        stories <= 0 ? props.setIsCreated(false) : props.setIsCreated(true)
         console.log('these are stories.', stories)
       })
       .then(() => props.msgAlert({
