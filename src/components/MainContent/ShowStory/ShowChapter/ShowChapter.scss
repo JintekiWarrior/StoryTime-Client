@@ -11,6 +11,13 @@
   margin-top: 1rem;
   color: $White;
   white-space: pre-wrap;
+
+  &::first-letter {
+    font-size: 400%;
+    float: left;
+    line-height: .8;
+    margin: 0.1em 0.1em 0.2em 0;
+  }
 }
 
 #delete-chapter-button {
