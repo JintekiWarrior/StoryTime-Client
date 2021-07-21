@@ -41,7 +41,6 @@ const ShowChapter = (props) => {
     props.history.goBack()
   }
   // render the content to the page
-  console.log('chapter:', chapter)
   return (
     <Fragment>
       <h3 id="chapter-title">{chapter.name}</h3>

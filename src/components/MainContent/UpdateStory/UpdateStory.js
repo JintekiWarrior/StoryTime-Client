@@ -23,12 +23,12 @@ const UpdateStory = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     updateStory(id, newStory, props.user)
-      .then(res => console.log('this is your response', res))
       .then(() => props.msgAlert({
         heading: 'Update Success',
         message: messages.updateSuccess,
         variant: 'success'
       }))
+      // sets edit to true on a successful axios call.
       .then(() => setEdit(true))
       .catch(error => {
         props.msgAlert({
@@ -38,6 +38,7 @@ const UpdateStory = (props) => {
         })
       })
   }
+  // if the edit variable is true redirect the user to the show story page.
   if (edit) {
     return <Redirect to={`/content/${id}`}/>
   }

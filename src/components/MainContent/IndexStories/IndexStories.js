@@ -41,6 +41,7 @@ const IndexStories = (props) => {
       })
   }
 
+  // sets the message if no stories are created
   if (stories.length <= 0 && !props.isCreated) {
     return <p id="no-stories-message">No stories to show. Add some</p>
   }

@@ -25,7 +25,6 @@ const ShowStory = (props) => {
   useEffect(() => {
     showStory(id, props.user)
       .then(res => {
-        console.log('I got a story', res)
         setStory(res.data.story.title)
       })
   }, [isUpdated])
