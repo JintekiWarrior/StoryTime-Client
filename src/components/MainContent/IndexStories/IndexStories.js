@@ -55,7 +55,7 @@ const IndexStories = (props) => {
       {stories.map(story => (
         <div id="story-index-container" key={story.id}>
           <Link id="story-index-link" to={`/content/${story.id}`}>{story.title}</Link>
-          <datetime id="story-create-date">Date: {story.created_at.slice(0, 10)}</datetime>
+          <p id="story-create-date">Date: {story.created_at.slice(0, 10)}</p>
         </div>
       ))}
     </Fragment>
