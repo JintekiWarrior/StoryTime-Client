@@ -23,7 +23,7 @@ const HomePage = (props) => {
       </div>
       <hr id="incline-line-2"></hr>
       <div className="begin-writing-container">
-        <Nav.Link className='begin-writing-link' href='/#sign-in'>Show Stories</Nav.Link>
+        <Nav.Link className='begin-writing-link' href={props.user ? '/#content' : '/#sign-in'}>Show Stories</Nav.Link>
         <q className="home-quote">
           Dont walk behind me; I may not lead. Dont walk in front of me
           I may not follow. Just walk beside me and be my friend.
