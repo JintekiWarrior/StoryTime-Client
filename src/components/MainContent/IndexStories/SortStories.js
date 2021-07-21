@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react'
+import './IndexStories.scss'
 
 const SortStories = (props) => {
   // const [data, setData] = useState(props.stories)
@@ -41,7 +42,7 @@ const SortStories = (props) => {
       <select name="sort" onChange={(event) => setSortType(event.target.value)} id="select-menu">
         <option value="sort">Sort</option>
         <option value="title">Title</option>
-        <option value="id">Created</option>
+        <option value="id">Date desc</option>
       </select>
     </Fragment>
   )
