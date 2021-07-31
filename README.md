@@ -9,7 +9,9 @@ for others to view them shall be coming soon.
 ### Repo's
 
 [Client Repo](https://github.com/JintekiWarrior/Story_Time_Frontend)
+[Deployed Client](https://jintekiwarrior.github.io/Story_Time_Frontend)
 [Server Repo](https://github.com/JintekiWarrior/Story_Time_Backend)
+[Deployed Server](https://story-time-backend-app.herokuapp.com)
 
 ### WireFrame's
 [Wireframes](https://imgur.com/gallery/hAbRPI4)
